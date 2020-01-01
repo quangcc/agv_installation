@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Hướng dẫn cài đặt Addon BHTĐ </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Mục lục </div>
+      <div class="list-group list-group-flush">
+        <a href="./AGAS18.html" class="list-group-item list-group-item-action bg-light">Update AGAS 18</a>
+        <a href="./EgasCenter.html" class="list-group-item list-group-item-action bg-light">EGAS Center</a>
+        <a href="./EgasClient.html" class="list-group-item list-group-item-action bg-light">EGAS Client</a>
+        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Cấu hình EGAS</a>
+        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Cài đặt S3M</a>
+        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Cài đặt OPT</a>
+        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Cài đặt Printer</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Đóng menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="mt-4">Cài đặt chương trình OPT Sale</h1>
+		<p>-	Đăng nhập máy tính All-in-one với quyền Administrator. Ngoài ra, yêu cầu máy tính cài đặt cần phải có <code>dotNet Framework 4.5.2</code>. 
+		<p>- 	Nếu chưa cài framework này, cần cài đặt trước khi bắt đầu cài BHTĐ. Tải phiên bản Offline Installer ở trang chủ Microsoft tại <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42642" target="_blank">đây<a> </p>
+		<p>-	Click vào file “SetupOPT.msi” <img src="../image/optsale_installer_file.png" class="img-fluid" alt="Responsive image"> là file dùng để cài đặt chương trình để bắt đầu cài đặt. </p>
+		<p>-	Ở cửa sổ bật lên, người dùng click vào ô <code>“Next”</code> để tiếp tục cài đặt. Nếu hủy cài đặt, có thể chọn vào <code>“Cancel”</code> hoặc đóng cửa sổ cài đặt bằng dấu X ở góc trên cùng bên phải của cửa sổ <p>
+		<img src="../image/optsale_installer_step1.png" class="img-fluid" alt="Responsive image">
+		<br />
+		
+		<p>-	Cửa số tiếp theo dùng để nhập các thông tin cấu hình thông tin kết nối tới hệ thống BHTĐ đã được cài đặt từ trước đó. Các thông tin này bao gồm:
+		<p>+	Host: Là địa chỉ IP của máy tính đã cài BHTĐ từ trước đó. Mặc định là “192.168.1.101” là địa chỉ IP của máy EGAS. Nếu cài BHTĐ trên máy tính khác, cần thay đổi giá trị Host này theo IP tương ứng.
+		<p>+	Port: Là cổng kết nối tương ứng đến hệ thống BHTĐ trên máy cài đặt chương trình BHTĐ. Mặc định là 8000. 
+		<p>+	Access Token: Là Token dùng để kết nối tới dịch vụ BHTĐ. Mặc định là “EAAFrIE64ZBMIBAP74JwV4Cbfbj9RoSP”.
+		<p>Lưu ý: Các giá trị này phải giống các giá trị đã được khai báo khi cài đặt BHTĐ. Nếu không đúng sẽ không thể tiến hành kết nối </p>
+		<img src="../image/optsale_installer_step2.png" class="img-fluid" alt="Responsive image">
+
+		<p>-	Cửa số tiếp theo (Hình 22) dùng để nhập các thông tin cấu hình tại màn hình OPT. Các thông tin này bao gồm:
+		<p>+	Company Name: Là tên của đơn vị triển khai bán hàng tự động. Lưu ý: ô này hiện không gõ được Tiếng Việt hoàn chỉnh.
+		<p>+	Client Id: Là mã của máy OPT cài đặt chương trình. Dùng để phân biệt nếu cửa hàng có nhiều máy OPT. Mặc định là 1. Lưu ý: ô này bắt buộc phải nhập kiểu số. Giá trị này tương ứng giá trị tại ô ClientId trên chức năng Cấu hình thông tin OPT tại EGAS.
+		<p>+	Product Group: Là nhóm vòi bơm được hiển thị dưới dạng danh sách trên màn hình OPT khi mua hàng. Mặc định là 0. Lưu ý: nếu giá trị này = 0 tức là OPT sẽ hiển thị tất cả các vòi bơm ở chế độ TPV. Giá trị > 0 thì tương ứng OPT sẽ hiển thị nhóm vòi bơm theo chức năng <code>Cấu hình vị trí vòi bơm bán tự phục vụ (S3)</code> tại EGAS.
+		<p>+	Card Reader Port: Là cổng Com dùng để kết nối tới đầu đọc thẻ của cột OPT. Mặc định là 2. </p> 
+		<img src="../image/optsale_installer_step3.png" class="img-fluid" alt="Responsive image">
+
+		<p>-	Cửa số tiếp theo (Hình 23) dùng để nhập các thông tin cấu hình các hình thức thanh toán tại màn hình OPT. Các thông tin này bao gồm:
+		<p>+	Card Napas: Là thanh toán thẻ tại OPT. Mặc định là true.
+		<p>+	Cashing: Là thanh toán tiền mặt tại OPT. Mặc định là false.
+		<p>+	Wallet Online: Là thanh toán qua ví điện tử (Momo). Mặc định là true. 
+		<p>Lưu ý: Tùy vào số lượng các hình thức thanh toán tại cửa hàng mà người dùng tắt/ bật các hình thức phù hợp. Hiện tại hệ thống chưa hỗ trợ hình thức tiền mặt. </p>
+		<img src="../image/optsale_installer_step4.png" class="img-fluid" alt="Responsive image">
+
+		<p>-	Cửa sổ tiếp theo (Hình 24) dùng để cấu hình vị trí cài đặt chương trình OPT trên máy All-in-one. Mặc định, hệ thống sẽ được cài đặt vào thư mục “C:\Program Files (x86)\BHTD\OPTSale\”. Người dùng có thể chỉnh sửa vị trí cài đặt này nếu cần. 
+		<p>Option lựa chọn “Everyone” hoặc “Just me” dùng để định nghĩa chương trình này cài đặt cho tất cả các User trên máy hay chỉ cho User hiện tại của máy tính. Mặc định chọn “Everyone”. Lưu ý: không nên chọn “Just me” vì máy tính bán hàng có thể có nhiều User khác nhau sử dụng</p>
+		<img src="../image/optsale_installer_step5.png" class="img-fluid" alt="Responsive image">
+
+
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

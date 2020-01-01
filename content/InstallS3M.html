@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Hướng dẫn cài đặt Addon BHTĐ </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Mục lục </div>
+      <div class="list-group list-group-flush">
+        <a href="./AGAS18.html" class="list-group-item list-group-item-action bg-light">Update AGAS 18</a>
+        <a href="./EgasCenter.html" class="list-group-item list-group-item-action bg-light">EGAS Center</a>
+        <a href="./EgasClient.html" class="list-group-item list-group-item-action bg-light">EGAS Client</a>
+        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Cấu hình EGAS</a>
+        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Cài đặt S3M</a>
+        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Cài đặt OPT</a>
+        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Cài đặt Printer</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Đóng menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="mt-4">Cài đặt chương trình S3M - Service Manager</h1>
+		<p>-	Đăng nhập máy tính với quyền Administrator. Ngoài ra, yêu cầu máy tính cài đặt cần phải có <code>dotNet Framework 4.5.2</code>. 
+		<p>- 	Nếu chưa cài framework này, cần cài đặt trước khi bắt đầu cài BHTĐ. Tải phiên bản Offline Installer ở trang chủ Microsoft tại <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42642" target="_blank">đây<a> </p>
+		<p>-	Click vào file “SetupBHTD.msi” <img src="../image/s3m_installer_file.png" class="img-fluid" alt="Responsive image"> là file dùng để cài đặt chương trình để bắt đầu cài đặt. </p>
+		<p>-	Ở cửa sổ bật lên, người dùng click vào ô <code>“Next”</code> để tiếp tục cài đặt. Nếu hủy cài đặt, có thể chọn vào <code>“Cancel”</code> hoặc đóng cửa sổ cài đặt bằng dấu X ở góc trên cùng bên phải của cửa sổ <p>
+		<img src="../image/s3m_installer_step1.png" class="img-fluid" alt="Responsive image">
+		<br />
+		<p>-	Cửa sổ tiếp theo dùng để nhập các thông tin kết nối tới hệ thống EGAS Client đang chạy tại cửa hàng và cấu hình hoạt động của chương trình. Trong đó: </p>
+		<p>+ 	Ô “Egas Server IP” được mặc định sẵn là “http://192.168.1.101/EUInfo.aspx” - là đường dẫn kết nối để kết nối tới hệ thống EGAS Client  </p>
+		<p>+	Server Port: Là cổng kết nối tương ứng đến hệ thống BHTĐ trên máy cài đặt chương trình. Mặc định là 8000.  </p>
+		<p>+	Access Token: Là Token dùng để kết nối tới dịch vụ BHTĐ. Mặc định là <code>“EAAFrIE64ZBMIBAP74JwV4Cbfbj9RoSP”</code>. </p>
+		<p>+	Delay Time (ms): Là thời gian chờ để làm mới màn hình scadar khi có người bơm hàng. Mặc định là 500 miliseconds. </p>
+		<img src="../image/s3m_installer_step2.png" class="img-fluid" alt="Responsive image">
+		<br />
+		<p>-	Sau đó, có thể ấn <code>“Next”</code> để tiếp tục việc cài đặt. Cửa sổ tiếp theo dùng để cấu hình xem hệ thống có cho phép thanh toán qua Momo không. Nếu có hãy tích vào ô. Mặc định sẽ là có thanh toán Momo </p>
+		<img src="../image/s3m_installer_step3.png" class="img-fluid" alt="Responsive image">
+		<br />
+		<p>-	Sau đó, có thể ấn <code>“Next”</code> để tiếp tục việc cài đặt. </p>
+		<img src="../image/s3m_installer_step4.png" class="img-fluid" alt="Responsive image">
+		<p>-	Cửa sổ tiếp theo dùng để cấu hình vị trí cài đặt chương trình BHTĐ. Mặc định, hệ thống sẽ được cài đặt vào thư mục “C:\Program Files (x86)\BHTD\ServiceBHTD\”. Người dùng có thể chỉnh sửa vị trí cài đặt này nếu cần. </p>
+		<p>-	Option lựa chọn “Everyone” hoặc “Just me” dùng để định nghĩa chương trình này cài đặt cho tất cả các User trên máy hay chỉ cho User hiện tại của máy tính. Mặc định chọn “Everyone”. Lưu ý: không nên chọn “Just me” vì máy tính bán hàng có thể có nhiều User khác nhau sử dụng. </p>
+		<br />
+		<p>-	Sau đó, có thể ấn <code>“Next”</code> để tiếp tục việc cài đặt. </p>
+		<img src="../image/s3m_installer_step5.png" class="img-fluid" alt="Responsive image">
+		<p>-	Cửa sổ tiếp theo dùng để xác nhận việc cài đặt chương trình. Người dùng chọn vào <code>“Next”</code> để bắt đầu việc cài đặt. Nếu thấy các thông tin cấu hình chưa đúng, có thể chọn “Back” để kiểm tra lại và chỉnh sửa theo các bước bên trên nếu cần. </p>
+		<p>Lưu ý: Khi chọn bắt đầu cài đặt, người dùng cần có bước xác thực quyền Administrator của máy tính. Việc cài đặt sẽ mất khoảng 2~5 giây </p>
+
+		<p>-	Khi cài đặt thành công, màn hình hiển thị bước cuối cùng như sau: </p>
+		<img src="../image/s3m_installer_step6.png" class="img-fluid" alt="Responsive image">
+ 
+		<p>Nếu không đến được màn hình như trên thì tức là cài đặt không thành công. Có thể thử cài đặt lại theo các bước trên.
+		<p>Khi cài đặt thành công, trên màn hình Desktop của máy tính sẽ xuất hiện Icon của chương trình  . Click vào icon để bắt đầu bán hàng tự động. Cửa chương trình xuất hiện như sau:
+		<img src="../image/s3m_installer_icon.png" class="img-fluid" alt="Responsive image">
+ 
+		<p>Lưu ý: Khi mở chương trình lên sẽ có yêu cầu cấp quyền Admin, chọn vào ô “Yes” để mở chương trình. Khi cửa sổ được mở ra, ô Evenlog phải là ô trống như hình dưới, nếu ô Event log có hiển thị thông báo thì tức là chương trình cài đặt gặp vấn đề.
+		<p>Khi người dùng muốn Stop, Restart và Exit chương trình thì sẽ phải nhập mật khẩu tương ứng với mỗi tác vụ. Với Stop mật khẩu là stop, Restart – restart và Exit – exit.
+		<p>Có thể tích vào ô “Khởi động cùng Windows” để chương trình tự khởi động khi máy tính khởi động lại. </p>
+		<img src="../image/s3m_installer_step7.png" class="img-fluid" alt="Responsive image">
+
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
