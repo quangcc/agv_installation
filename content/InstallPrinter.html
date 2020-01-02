@@ -29,29 +29,79 @@
         <a href="./AGAS18.html" class="list-group-item list-group-item-action bg-light">Update AGAS 18</a>
         <a href="./EgasCenter.html" class="list-group-item list-group-item-action bg-light">EGAS Center</a>
         <a href="./EgasClient.html" class="list-group-item list-group-item-action bg-light">EGAS Client</a>
-        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Config EGAS</a>
-        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Install S3M</a>
-        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Install OPT</a>
-        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Install Printer</a>
+        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Cấu hình EGAS</a>
+        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Cài đặt S3M</a>
+        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Cài đặt OPT</a>
+        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Cài đặt Printer</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+	
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" id="navigationPanel">
         <button class="btn btn-primary" id="menu-toggle">Đóng menu</button>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+		
+		<div class="navbar-collapse collapse order-3 dual-collapse2">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="../index.html">Home</a>
+				</li>
+			</ul>
+		</div>
       </nav>
 
       <div class="container-fluid">
         <h1 class="mt-4">Cài đặt chương trình Printer</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+		<p>-	Trước tiên cần setup IP tĩnh cho máy tính All-in-one. Bắt buộc phải setup theo giá trị PRINTERIP tại chức năng <code>Cấu hình thông tin OPT trên EGAS</code>. Có thể setup theo hướng dẫn tại <a href="https://quantrimang.com/gan-dia-chi-ip-tinh-47928" target="_blank">đây </a>		
+		<p>-	Đăng nhập máy tính All-in-one với quyền Administrator. Ngoài ra, yêu cầu máy tính cài đặt cần phải có <code>dotNet Framework 4.5.2</code>. Nếu chưa cài framework này, cần cài đặt trước khi bắt đầu cài BHTĐ. Tải phiên bản Offline Installer ở trang chủ Microsoft tại <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42642" target="_blank">đây<a> </p>
+		<p>-	Click vào file “SetupOPT.msi” <img src="../image/printer_installer_file.png" class="img-fluid" alt="Responsive image"> là file dùng để cài đặt chương trình để bắt đầu cài đặt. </p>
+		<p>-	Ở cửa sổ bật lên, người dùng click vào ô <code>“Next”</code> để tiếp tục cài đặt. Nếu hủy cài đặt, có thể chọn vào <code>“Cancel”</code> hoặc đóng cửa sổ cài đặt bằng dấu X ở góc trên cùng bên phải của cửa sổ <p>
+		<img src="../image/printer_installer_step1.png" class="img-fluid" alt="Responsive image">
+
+		<p>-	Cửa số tiếp theo dùng để nhập các thông tin cấu hình thông tin kết nối tới hệ thống BHTĐ đã được cài đặt từ trước đó. Các thông tin này gồm:
+		<p>+	Com Port: Là cổng Com dùng để in biên lai trên cột bơm OPT. Mặc định là cổng COM1 </p>
+		<img src="../image/printer_installer_step2.png" class="img-fluid" alt="Responsive image">
+
+		<p>-	Cửa số tiếp theo dùng để nhập các thông tin cấu hình mẫu in. Các thông tin này gồm:
+		<p>+	Print Electronic Bills: True là máy in sẽ in mã tra cứu hóa đơn điện thử nếu cần. Mặc định là true </p>
+		<p>+	Print Reward Points: True là máy in sẽ in điểm tích lũy của khách hàng theo giao dịch tương ứng. Mặc định là false </p>
+		<img src="../image/printer_installer_step21.png" class="img-fluid" alt="Responsive image">
+	
+		
+		<p>-	Cửa sổ tiếp theo dùng để cấu hình vị trí cài đặt chương trình Printer trên máy All-in-one. Mặc định, hệ thống sẽ được cài đặt vào thư mục “C:\Program Files (x86)\BHTD\PrinterBHTD\”. Người dùng có thể chỉnh sửa vị trí cài đặt này nếu cần. 
+		<p>-	Option lựa chọn “Everyone” hoặc “Just me” dùng để định nghĩa chương trình này cài đặt cho tất cả các User trên máy hay chỉ cho User hiện tại của máy tính. Mặc định chọn “Everyone”. Lưu ý: không nên chọn “Just me” vì máy tính bán hàng có thể có nhiều User khác nhau sử dụng.</p>
+		<img src="../image/printer_installer_step3.png" class="img-fluid" alt="Responsive image">
+		
+		<p>-	Cửa sổ tiếp theo (Hình 31) dùng để xác nhận việc cài đặt chương trình. Người dùng chọn vào “Next” để bắt đầu việc cài đặt. Nếu thấy các thông tin cấu hình chưa đúng, có thể chọn “Back” để kiểm tra lại và chỉnh sửa theo các bước bên trên nếu cần. </p>
+		<p>Lưu ý: Khi chọn bắt đầu cài đặt, người dùng cần có bước xác thực quyền Administrator của máy tính. Việc cài đặt sẽ mất khoảng 2~5 giây. </p>
+		<img src="../image/printer_installer_step4.png" class="img-fluid" alt="Responsive image">
+
+		<p>-	Khi cài đặt thành công, màn hình hiển thị bước cuối cùng như sau: </p>
+		<img src="../image/printer_installer_step5.png" class="img-fluid" alt="Responsive image">
+
+
+		<p>-	Nếu không đến được màn hình như trên thì tức là cài đặt không thành công. Có thể thử cài đặt lại theo các bước trên.
+		<p>-	Khi cài đặt thành công, trên màn hình Desktop của máy tính sẽ xuất hiện Icon của chương trình <img src="../image/printer_installer_icon.png" class="img-fluid" alt="Responsive image"> . Click vào icon để bắt đầu chương trình in ấn. </p>
+		<img src="../image/printer_installer_step6.png" class="img-fluid" alt="Responsive image">
+
+ 
+		<p>-	Lưu ý: Khi mở chương trình lên sẽ có yêu cầu cấp quyền Admin, chọn vào ô “Yes” để mở chương trình.
+		<p>-	Khi người dùng muốn “Kết thúc” chương trình in thì sẽ phải nhật mật khẩu để tắt. Mật khẩu mặc định là “1”
+		<p>+	Các thông số sau khi cài đặt được lưu trong file cấu hình như sau 
+		<pre>
+        <code>
+		{
+			"comPort": 1,
+			"isPrintRewardPoints": false,
+			"isPrintElectronicBill": true
+		}
+		</code>
+		</pre>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -59,18 +109,19 @@
   </div>
   <!-- /#wrapper -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Menu Toggle Script -->
-  <script>
+	<!-- Menu Toggle Script -->
+	<script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-  </script>
-
+	</script>
+	</script>
+	
 </body>
 
 </html>

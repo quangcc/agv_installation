@@ -42,10 +42,17 @@
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Đóng menu</button>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> 
+		
+		<div class="navbar-collapse collapse order-3 dual-collapse2">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="../index.html">Home</a>
+				</li>
+			</ul>
+		</div>
       </nav>
 
       <div class="container-fluid">
@@ -64,25 +71,92 @@
 		<p>Lưu ý: Các giá trị này phải giống các giá trị đã được khai báo khi cài đặt BHTĐ. Nếu không đúng sẽ không thể tiến hành kết nối </p>
 		<img src="../image/optsale_installer_step2.png" class="img-fluid" alt="Responsive image">
 
-		<p>-	Cửa số tiếp theo (Hình 22) dùng để nhập các thông tin cấu hình tại màn hình OPT. Các thông tin này bao gồm:
+		<p>-	Cửa số tiếp theo dùng để nhập các thông tin cấu hình tại màn hình OPT. Các thông tin này bao gồm:
 		<p>+	Company Name: Là tên của đơn vị triển khai bán hàng tự động. Lưu ý: ô này hiện không gõ được Tiếng Việt hoàn chỉnh.
 		<p>+	Client Id: Là mã của máy OPT cài đặt chương trình. Dùng để phân biệt nếu cửa hàng có nhiều máy OPT. Mặc định là 1. Lưu ý: ô này bắt buộc phải nhập kiểu số. Giá trị này tương ứng giá trị tại ô ClientId trên chức năng Cấu hình thông tin OPT tại EGAS.
 		<p>+	Product Group: Là nhóm vòi bơm được hiển thị dưới dạng danh sách trên màn hình OPT khi mua hàng. Mặc định là 0. Lưu ý: nếu giá trị này = 0 tức là OPT sẽ hiển thị tất cả các vòi bơm ở chế độ TPV. Giá trị > 0 thì tương ứng OPT sẽ hiển thị nhóm vòi bơm theo chức năng <code>Cấu hình vị trí vòi bơm bán tự phục vụ (S3)</code> tại EGAS.
 		<p>+	Card Reader Port: Là cổng Com dùng để kết nối tới đầu đọc thẻ của cột OPT. Mặc định là 2. </p> 
 		<img src="../image/optsale_installer_step3.png" class="img-fluid" alt="Responsive image">
 
-		<p>-	Cửa số tiếp theo (Hình 23) dùng để nhập các thông tin cấu hình các hình thức thanh toán tại màn hình OPT. Các thông tin này bao gồm:
+		<p>-	Cửa số tiếp theo dùng để nhập các thông tin cấu hình các hình thức thanh toán tại màn hình OPT. Các thông tin này bao gồm:
 		<p>+	Card Napas: Là thanh toán thẻ tại OPT. Mặc định là true.
 		<p>+	Cashing: Là thanh toán tiền mặt tại OPT. Mặc định là false.
 		<p>+	Wallet Online: Là thanh toán qua ví điện tử (Momo). Mặc định là true. 
 		<p>Lưu ý: Tùy vào số lượng các hình thức thanh toán tại cửa hàng mà người dùng tắt/ bật các hình thức phù hợp. Hiện tại hệ thống chưa hỗ trợ hình thức tiền mặt. </p>
 		<img src="../image/optsale_installer_step4.png" class="img-fluid" alt="Responsive image">
 
-		<p>-	Cửa sổ tiếp theo (Hình 24) dùng để cấu hình vị trí cài đặt chương trình OPT trên máy All-in-one. Mặc định, hệ thống sẽ được cài đặt vào thư mục “C:\Program Files (x86)\BHTD\OPTSale\”. Người dùng có thể chỉnh sửa vị trí cài đặt này nếu cần. 
+		<p>-	Cửa sổ tiếp theo dùng để cấu hình vị trí cài đặt chương trình OPT trên máy All-in-one. Mặc định, hệ thống sẽ được cài đặt vào thư mục “C:\Program Files (x86)\BHTD\OPTSale\”. Người dùng có thể chỉnh sửa vị trí cài đặt này nếu cần. 
 		<p>Option lựa chọn “Everyone” hoặc “Just me” dùng để định nghĩa chương trình này cài đặt cho tất cả các User trên máy hay chỉ cho User hiện tại của máy tính. Mặc định chọn “Everyone”. Lưu ý: không nên chọn “Just me” vì máy tính bán hàng có thể có nhiều User khác nhau sử dụng</p>
 		<img src="../image/optsale_installer_step5.png" class="img-fluid" alt="Responsive image">
+		
+		<p>-	Cửa sổ tiếp theo dùng để xác nhận việc cài đặt chương trình. Người dùng chọn vào <code>“Next”</code> để bắt đầu việc cài đặt. Nếu thấy các thông tin cấu hình chưa đúng, có thể chọn <code>“Back”</code> để kiểm tra lại và chỉnh sửa theo các bước bên trên nếu cần. 
+		<p>-	Lưu ý: Khi chọn bắt đầu cài đặt, người dùng cần có bước xác thực quyền Administrator của máy tính. Việc cài đặt sẽ mất khoảng 2~5 giây. </p>
+		<img src="../image/optsale_installer_step6.png" class="img-fluid" alt="Responsive image">
+	
+		<p>-	Khi cài đặt thành công, màn hình hiển thị bước cuối cùng như hình sau:</p>
+		<img src="../image/optsale_installer_step7.png" class="img-fluid" alt="Responsive image">
+		
+		<p>Nếu không đến được màn hình như hình 26 thì tức là cài đặt không thành công. Có thể thử cài đặt lại theo các bước trên.
+		<p>-	Khi cài đặt thành công, trên màn hình Desktop của máy tính sẽ xuất hiện Icon của chương trình  . Click vào icon để bắt đầu bán hàng tự động.
+		<img src="../image/optsale_installer_icon.png" class="img-fluid" alt="Responsive image">
+		
+		<p>-	Sau khi cài, cấu hình cho chương trình chạy Compatibility để chương trình không bị crash khi mất kết nối server</p>
+		<img src="../image/optsale_installer_step8.png" class="img-fluid" alt="Responsive image">
+		
+ 
+		<p>Lưu ý: Khi mở chương trình lên sẽ có yêu cầu cấp quyền Admin, chọn vào ô “Yes” để mở chương trình. Khi cửa sổ được mở ra, nếu có thông báo không nối được đến Server thì cần kiểm tra lại việc kết nối. Nếu không hiển thị các mặt hàng thì cần kiểm tra lại việc Cấu hình vị trí vòi bơm bán hàng Tự phục vụ hoặc ấn LoadS3Config trong màn hình S3Scadar.
+		<p>Để tùy biến chương trình OPTSale có thể vào thư mục Config trong thư mục cài đặt chương trình để cấu hình như sau:
+		<pre>
+        <code>
+		{
+			"clientConfig": {
+				"clientId": 1,
+				"companyName": "CHI NHÁNH XĂNG DẦU VĨNH PHÚC - KV1",
+				"payMethod": {
+					"card": true,
+					"cash": false,
+					"walletOnline": true
+				},
+				"productGroup": "1",
+				"stepPaymentATM": "Quẹt thẻ  >  Nhấn Enter  > Nhập Mã Pin  > Nhấn Enter"
+			},
+			"serverConfig": {
+				"host": "192.168.1.101",
+				"port": "8000",
+				"accessToken": "EAAFrIE64ZBMIBAP74JwV4Cbfbj9RoSP"
+			},
+			"systemConfig": {
+				"payTimeOut": 120,
+				"pumpStateTimeOut": 5,
+				"rowNumberRePrint": 20,
+				"printPort": 1,
+				"cardReaderPort": 2,
+				"cardTickPointTimeout": 40,
+				"useButtonCardTickPoint": true,
+				"usePlusButton": true,
+				"usebtnCardTickPoint": true,
+				"usebtnBill": true,
+				"usebtnRewardPoint": true,
+				"interfaceTimeout": 15
+			}
+		}
+		</code>
+		</pre>
+		
+		<p>-	payTimeOut: Thơi gian chờ quẹt thẻ trên máy POS
+		<p>-	pumpStateTimeOut: Thời gian chờ kiểm tra trạng thái vòi bơm
+		<p>-	rowNumberRePrint: Thời gian chờ kiểm tra trạng thái vòi bơm
+		<p>-	printPort: Thời gian chờ kiểm tra trạng thái vòi bơm
+		<p>-	cardReaderPort: Thời gian chờ kiểm tra trạng thái vòi bơm
+		<p>-	cardTickPointTimeout: Thời gian chờ đọc thẻ tích điểm
+		<p>-	useButtonCardTickPoint: Cấu hình lựa chọn tích điểm bằng nút checkbox hoặc sử dụng nút bấm
+		<p>-	usePlusButton: Cấu hình sử dụng dấu + tại màn hình đặt lượng theo tiền/lit
+		<p>-	usebtnCardTickPoint: Cấu hình sử dụng dấu + tại màn hình đặt lượng theo tiền/lit
+		<p>-	usebtnBill: Cấu hình sử dụng dấu + tại màn hình đặt lượng theo tiền/lit
+		<p>-	usebtnRewardPoint: Cấu hình sử dụng dấu + tại màn hình đặt lượng theo tiền/lit		
+		<p>-	interfaceTimeout: Thời gian chờ màn hình tự chuyển về Home khi không có tác động.</p>
 
-
+		
       </div>
     </div>
     <!-- /#page-content-wrapper -->
