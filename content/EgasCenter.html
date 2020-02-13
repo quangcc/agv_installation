@@ -51,7 +51,102 @@
       <div class="container-fluid">
         <h1 class="mt-4">Cập nhật Egas center</h1>
 		
-		<p>-	Cập nhật Egas trung tâm như sau: 
+		<p>-	Cập nhật Sysparam-Company Egas trung tâm như sau: 
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
+<div class="tg-wrap"><table class="tg" style="undefined;table-layout: fixed; width: 452px">
+<colgroup>
+<col style="width: 150px">
+<col style="width: 300px">
+<col style="width: 100px">
+<col style="width: 300px">
+</colgroup>
+<tr>
+    <th class="tg-0lax">Param</th>
+    <th class="tg-0lax">Value</th>
+    <th class="tg-0lax">Param class</th>
+    <th class="tg-0lax">Note</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">agv_amtmin2print</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td>agv_confirmss</td>
+    <td>0</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_http</td>
+    <td>https://egas.petrolimex.com.vn</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_maxamt</td>
+    <td>5000000</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_maxqty</td>
+    <td>500</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_minamt</td>
+    <td>5000</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_minqty</td>
+    <td>1</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_paycardcode</td>
+    <td>HDB||970437;MOMO||970480</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_playpause</td>
+    <td>1</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_start2play</td>
+    <td>0</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>agv_syncurl</td>
+    <td>https://egas.piacom.com.vn/</td>
+    <td>0</td>
+    <td>Nếu triển khai egas nxh thì Value để = rỗng</td>
+  </tr>
+  <tr>
+    <td>agv_tcode</td>
+    <td>OPT||406</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+</table></div>	
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>-	Cập nhật Database Egas trung tâm như sau: 
 		<p>		+ Bảng S3PAYLOG (ORACLE):	</p> 
 						<code>DROP TABLE [SCHEMA].S3PAYLOG CASCADE CONSTRAINTS; </br>
 
@@ -167,40 +262,29 @@ ALTER TABLE [SCHEMA].S3PAYLOG ADD ( </br>
 ) </code> 		
 		<h2> ------------------------------------------------------------------------------ </h2>
 				<p>		+ Bảng S3LOG (ORACLE):	</p> 
-						<code>DROP TABLE [SCHEMA].S3PAYLOG CASCADE CONSTRAINTS; </br>
+						<code>DROP TABLE [SCHEMA].S3LOG CASCADE CONSTRAINTS; </br>
 
-CREATE TABLE [SCHEMA].S3PAYLOG </br>
+CREATE TABLE [SCHEMA].S3LOG </br>
 ( </br>
-&emsp;&emsp;&emsp;&emsp;  I               NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  S3ID            NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  POSID           NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  PRODUCTID       NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  PUMPID          NUMBER(8), </br>
-&emsp;&emsp;&emsp;&emsp;  TERMINALID      NUMBER(8), </br>
-&emsp;&emsp;&emsp;&emsp;  REQQTY          NUMBER(14,4), </br>
-&emsp;&emsp;&emsp;&emsp;  REQAMT          NUMBER(14,4), </br>
-&emsp;&emsp;&emsp;&emsp;  PAYREFNO        VARCHAR2(20 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  PAYREQDATE      NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  PAYRESDATE      NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  PAYAMT          NUMBER(14,4), </br>
-&emsp;&emsp;&emsp;&emsp;  PAYINFO         VARCHAR2(255 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  PAYACCT         VARCHAR2(30 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  CUSTTEL         VARCHAR2(20 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  BANKCODE        VARCHAR2(20 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  PAYSTATE        NUMBER(8), </br>
-&emsp;&emsp;&emsp;&emsp;  PRINTSTATE      NUMBER(8), </br>
-&emsp;&emsp;&emsp;&emsp;  REQSTR          VARCHAR2(2000 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  RESSTR          VARCHAR2(2000 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  T               NUMBER(8), </br>
-&emsp;&emsp;&emsp;&emsp;  SYSD            NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  SYSU            NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  MERCHANTID      NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  RESCODE         VARCHAR2(6 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  CARDHOLDERNAME  VARCHAR2(120 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  REQTYPE         VARCHAR2(20 BYTE), </br>
-&emsp;&emsp;&emsp;&emsp;  WSID            NUMBER(18), </br>
-&emsp;&emsp;&emsp;&emsp;  CLIENTID        NUMBER(11) </br>
-) </br>
+&emsp;&emsp;&emsp;&emsp;  I           NUMBER(18) PRIMARY KEY, </br>
+&emsp;&emsp;&emsp;&emsp;  POS         NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  WSHIFT      NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PUMPTDHID   NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  PRODUCTI    NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  SALEPRICE   NUMBER(8,2), </br>
+&emsp;&emsp;&emsp;&emsp;  CMDAMT      NUMBER(12,2), </br>
+&emsp;&emsp;&emsp;&emsp;  RETAMT      NUMBER(12,2), </br>
+&emsp;&emsp;&emsp;&emsp;  RETQTY      NUMBER(12,4), </br>
+&emsp;&emsp;&emsp;&emsp;  CMDTIME     NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  RETTIME     NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  JOBSTATUS   NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  SYSU        NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PREVSTATUS  NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  PAIDSTATUS  NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  CARDNUMBER  NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  DISCOUNT    NUMBER(10,2), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYID       NUMBER(18) </br>
+&emsp;&emsp;&emsp;&emsp;) </br>
 TABLESPACE [SCHEMA]_ST </br>
 PCTUSED    0 </br>
 PCTFREE    10 </br>
@@ -218,67 +302,29 @@ LOGGING  </br>
 NOCOMPRESS  </br>
 NOCACHE </br>
 MONITORING; </br>
- </br> 
-
-CREATE UNIQUE INDEX [SCHEMA].UQ_[SCHEMA]__S3PAYLOG_2 ON [SCHEMA].S3PAYLOG </br>
-(POSID, I) </br>
-LOGGING </br>
-TABLESPACE [SCHEMA]_ST </br>
-PCTFREE    10 </br>
-INITRANS   2 </br>
-MAXTRANS   255 </br>
-STORAGE    ( </br>
-&emsp;&emsp;&emsp;&emsp;            INITIAL          64K </br>
-&emsp;&emsp;&emsp;&emsp;            NEXT             1M </br>
-&emsp;&emsp;&emsp;&emsp;            MINEXTENTS       1 </br>
-&emsp;&emsp;&emsp;&emsp;            MAXEXTENTS       UNLIMITED </br>
-&emsp;&emsp;&emsp;&emsp;            PCTINCREASE      0 </br>
-&emsp;&emsp;&emsp;&emsp;            BUFFER_POOL      DEFAULT </br>
-&emsp;&emsp;&emsp;&emsp;           ); </br>
-
-ALTER TABLE [SCHEMA].S3PAYLOG ADD ( </br>
-&emsp;&emsp;&emsp;&emsp;  CONSTRAINT UQ_[SCHEMA]__S3PAYLOG_2 </br>
-&emsp;&emsp;&emsp;&emsp;  UNIQUE (POSID, I) </br>
-&emsp;&emsp;&emsp;&emsp;  USING INDEX [SCHEMA].UQ_[SCHEMA]__S3PAYLOG_2 </br>
-&emsp;&emsp;&emsp;&emsp;  ENABLE VALIDATE); </br>
   </code> 
 		<p>		+ Bảng S3PAYLOG (SQL Server):	</p> 
-						<code>CREATE TABLE [SCHEMA].[S3PayLog]( </br>
-&emsp;&emsp;&emsp;&emsp;	[I] [bigint] NOT NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[S3Id] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[POSId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ProductId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PumpId] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[TerminalId] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[REQQty] [numeric](14, 4) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[REQAmt] [numeric](14, 4) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYRefNo] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYReqDate] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYResDate] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYAmt] [numeric](14, 4) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYInfo] [nvarchar](255) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYAcct] [varchar](30) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[CustTel] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[BankCode] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYState] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PrintState] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ReqStr] [nvarchar](2000) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ResStr] [nvarchar](2000) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[MerchantId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ResCode] [varchar](6) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[CardHolderName] [nvarchar](120) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ReqType] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[WSId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[T] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[SysD] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[SysU] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ClientID] [int] NULL, </br>
- CONSTRAINT [UQ_SCHEMA__S3PayLog_2] UNIQUE NONCLUSTERED  </br>
-&emsp;&emsp;&emsp;&emsp;( </br>
-&emsp;&emsp;&emsp;&emsp;	[POSId] ASC, </br>
-&emsp;&emsp;&emsp;&emsp;	[I] ASC </br>
-&emsp;&emsp;&emsp;&emsp;) </br>
-) </code> 		
+						<code>CREATE TABLE [SCHEMA].[S3Log]( </br>
+&emsp;&emsp;&emsp;&emsp;	[I] [bigint] PRIMARY KEY NOT NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[WShift] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PumpTDHID] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ProductI] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[SalePrice] [numeric](8, 2) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[cmdAmt] [numeric](12, 2) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[retAmt] [numeric](12, 2) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[retQty] [numeric](12, 4) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[cmdTime] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[retTime] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[jobStatus] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[sysU] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[prevStatus] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[paidStatus] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[CardNumber] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[discount] [numeric](10, 2) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PrintState] [int] NULL </br>
+&emsp;&emsp;&emsp;&emsp;) </code> 		
 		<h2> ------------------------------------------------------------------------------ </h2>
 		<p>		+ Bảng S3CONFIG (ORACLE):	</p> 
 						<code>DROP TABLE [SCHEMA].S3CONFIG CASCADE CONSTRAINTS; </br>

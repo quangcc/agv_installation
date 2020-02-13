@@ -29,10 +29,10 @@
         <a href="./AGAS18.html" class="list-group-item list-group-item-action bg-light">Update AGAS 18</a>
         <a href="./EgasCenter.html" class="list-group-item list-group-item-action bg-light">EGAS Center</a>
         <a href="./EgasClient.html" class="list-group-item list-group-item-action bg-light">EGAS Client</a>
-        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Config EGAS</a>
-        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Install S3M</a>
-        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Install OPT</a>
-        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Install Printer</a>
+        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Cấu hình EGAS</a>
+        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Cài đặt S3M</a>
+        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Cài đặt OPT</a>
+        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Cài đặt Printer</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -48,11 +48,50 @@
         </button>
       </nav>
 
-      <div class="container-fluid">
+	<div class="container-fluid">
         <h1 class="mt-4">Cập nhật Egas client</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-      </div>
+        
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>Copy các file cần thiết vào thư mục cài egas. Tải thư mục này tại <a target="blank" href="./egasclient"> đây </a> </p>
+		<p> Danh sách các file cần copy đè vào EGAS Client: </p>
+		&emsp;&emsp;&emsp;&emsp;- EUInfo.aspx (Chạy thử đường dẫn http://192.168.1.101/EUInfo.aspx để kiểm tra) ,  </br>
+		&emsp;&emsp;&emsp;&emsp;- THD/ConfigCHXDMgr.aspx </br>
+		&emsp;&emsp;&emsp;&emsp;- THD/S3CardAssign1.aspx </br>
+		&emsp;&emsp;&emsp;&emsp;- THD/S3CardShow.aspx </br>
+		&emsp;&emsp;&emsp;&emsp;- THD/S3CardValidate.aspx </br>
+		&emsp;&emsp;&emsp;&emsp;- THD/S3CheckOnline.aspx </br>
+		&emsp;&emsp;&emsp;&emsp;- THD/S3ListOfWS.aspx </br>
+		&emsp;&emsp;&emsp;&emsp;- THD/S3Scadar.aspx </br>
+		&emsp;&emsp;&emsp;&emsp;- IMG/ {{ Copy toàn bộ thư mục ảnh tải về vào thư mục tại EGAS Client }}</br>
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>Cầu  hình kết nối BHTĐ </p>
+		<p>-	Chức năng : Cấu hình thông tin kết nối giữa chương trình điều khiển trung tâm S3M và chương trình quản lý lệnh theo vòi bơm S3-Scadar </p>	
+		<p>-	Đối tượng sử dụng : Admin </p>
+		<p>-	Đường dẫn : Cấu hình CHXD/ Cấu hình kết nối BHTĐ </p>
+		&emsp;&emsp;&emsp;&emsp;	+	Host IP : địa chỉ IP cài đặt chương trình S3M </br>
+		&emsp;&emsp;&emsp;&emsp;	+	Host Port : cổng kết nối chương trình S3M </br>
+		&emsp;&emsp;&emsp;&emsp;	+	Access ID : 0 (tương ứng với Client ID khi kết nối với S3M, Scadar luôn là 0) </br>
+		&emsp;&emsp;&emsp;&emsp;	+	Access Token : Mặc định EAAFrIE64ZBMIBAP74JwV4Cbfbj9RoSP </br>
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>Cấu hình vị trí vòi bơm (S3Config)</p>
+		<p>-	Chức năng : Cấu hình vị trí vòi bơm hiên thị lên màn hình S3-Scadar. Những vòi bơm nào được khai báo trong phần này sẽ là những vòi bơm được điều khiển BHTĐ.</p>
+		<p>-	Đối tượng sử dụng : Admin</p>
+		<p>-	Đường dẫn : Cấu hình CHXD/ Cấu hình vị trí vòi bơm</p>
+
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>Cầu hình thông tin OPT</p>
+		<p>-	Chức năng : Cấu hình thông tin OPT kết nối với hệ thống. Mỗi OPT có thể kết nối với một nhóm vòi bơm và một vòi bơm có thể được điều khiển bởi nhiều OPT. </p>
+		<p>-	Đối tượng sử dụng : Admin</p>
+		<p>-	Đường dẫn : Cấu hình CHXD/ Cấu hình thông tin OPT</p>
+
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>Cầu hình thông tin Ví điện tử</p>
+		<p>-	Chức năng : Cấu hình thông tin kết nối thanh toán ví điện tử. Mỗi cửa hàng có 1 kết nối tới 1 loại ví điện tử tương ứng. </p>
+		<p>-	Đối tượng sử dụng : Admin</p>
+		<p>-	Đường dẫn : Cấu hình CHXD/ Cấu hình thông tin Ví điện tử</p>
+
+		
+	</div>
     </div>
     <!-- /#page-content-wrapper -->
 
