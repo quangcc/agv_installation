@@ -29,10 +29,10 @@
         <a href="./AGAS18.html" class="list-group-item list-group-item-action bg-light">Update AGAS 18</a>
         <a href="./EgasCenter.html" class="list-group-item list-group-item-action bg-light">EGAS Center</a>
         <a href="./EgasClient.html" class="list-group-item list-group-item-action bg-light">EGAS Client</a>
-        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Config EGAS</a>
-        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Install S3M</a>
-        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Install OPT</a>
-        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Install Printer</a>
+        <a href="./ConfigEgas.html" class="list-group-item list-group-item-action bg-light">Cấu hình EGAS</a>
+        <a href="./InstallS3M.html" class="list-group-item list-group-item-action bg-light">Cài đặt S3M</a>
+        <a href="./InstallOPT.html" class="list-group-item list-group-item-action bg-light">Cài đặt OPT</a>
+        <a href="./InstallPrinter.html" class="list-group-item list-group-item-action bg-light">Cài đặt Printer</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -50,8 +50,505 @@
 
       <div class="container-fluid">
         <h1 class="mt-4">Cập nhật Egas center</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+		
+		<p>-	Cập nhật Egas trung tâm như sau: 
+		<p>		+ Bảng S3PAYLOG (ORACLE):	</p> 
+						<code>DROP TABLE [SCHEMA].S3PAYLOG CASCADE CONSTRAINTS; </br>
+
+CREATE TABLE [SCHEMA].S3PAYLOG </br>
+( </br>
+&emsp;&emsp;&emsp;&emsp;  I               NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  S3ID            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  POSID           NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PRODUCTID       NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PUMPID          NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  TERMINALID      NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  REQQTY          NUMBER(14,4), </br>
+&emsp;&emsp;&emsp;&emsp;  REQAMT          NUMBER(14,4), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYREFNO        VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYREQDATE      NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYRESDATE      NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYAMT          NUMBER(14,4), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYINFO         VARCHAR2(255 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYACCT         VARCHAR2(30 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  CUSTTEL         VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  BANKCODE        VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYSTATE        NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  PRINTSTATE      NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  REQSTR          VARCHAR2(2000 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  RESSTR          VARCHAR2(2000 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  T               NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  SYSD            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  SYSU            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  MERCHANTID      NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  RESCODE         VARCHAR2(6 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  CARDHOLDERNAME  VARCHAR2(120 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  REQTYPE         VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  WSID            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  CLIENTID        NUMBER(11) </br>
+) </br>
+TABLESPACE [SCHEMA]_ST </br>
+PCTUSED    0 </br>
+PCTFREE    10 </br>
+INITRANS   1 </br>
+MAXTRANS   255 </br>
+STORAGE    ( </br>
+&emsp;&emsp;&emsp;&emsp;            INITIAL          64K </br>
+&emsp;&emsp;&emsp;&emsp;            NEXT             1M </br>
+&emsp;&emsp;&emsp;&emsp;            MINEXTENTS       1 </br>
+&emsp;&emsp;&emsp;&emsp;            MAXEXTENTS       UNLIMITED </br>
+&emsp;&emsp;&emsp;&emsp;            PCTINCREASE      0 </br>
+&emsp;&emsp;&emsp;&emsp;            BUFFER_POOL      DEFAULT </br>
+&emsp;&emsp;&emsp;&emsp;           ) </br>
+LOGGING  </br>
+NOCOMPRESS  </br>
+NOCACHE </br>
+MONITORING; </br>
+ </br> 
+
+CREATE UNIQUE INDEX [SCHEMA].UQ_[SCHEMA]__S3PAYLOG_2 ON [SCHEMA].S3PAYLOG </br>
+(POSID, I) </br>
+LOGGING </br>
+TABLESPACE [SCHEMA]_ST </br>
+PCTFREE    10 </br>
+INITRANS   2 </br>
+MAXTRANS   255 </br>
+STORAGE    ( </br>
+&emsp;&emsp;&emsp;&emsp;            INITIAL          64K </br>
+&emsp;&emsp;&emsp;&emsp;            NEXT             1M </br>
+&emsp;&emsp;&emsp;&emsp;            MINEXTENTS       1 </br>
+&emsp;&emsp;&emsp;&emsp;            MAXEXTENTS       UNLIMITED </br>
+&emsp;&emsp;&emsp;&emsp;            PCTINCREASE      0 </br>
+&emsp;&emsp;&emsp;&emsp;            BUFFER_POOL      DEFAULT </br>
+&emsp;&emsp;&emsp;&emsp;           ); </br>
+
+ALTER TABLE [SCHEMA].S3PAYLOG ADD ( </br>
+&emsp;&emsp;&emsp;&emsp;  CONSTRAINT UQ_[SCHEMA]__S3PAYLOG_2 </br>
+&emsp;&emsp;&emsp;&emsp;  UNIQUE (POSID, I) </br>
+&emsp;&emsp;&emsp;&emsp;  USING INDEX [SCHEMA].UQ_[SCHEMA]__S3PAYLOG_2 </br>
+&emsp;&emsp;&emsp;&emsp;  ENABLE VALIDATE); </br>
+  </code> 
+		<p>		+ Bảng S3PAYLOG (SQL Server):	</p> 
+						<code>CREATE TABLE [SCHEMA].[S3PayLog]( </br>
+&emsp;&emsp;&emsp;&emsp;	[I] [bigint] NOT NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[S3Id] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[POSId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ProductId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PumpId] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[TerminalId] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[REQQty] [numeric](14, 4) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[REQAmt] [numeric](14, 4) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYRefNo] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYReqDate] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYResDate] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYAmt] [numeric](14, 4) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYInfo] [nvarchar](255) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYAcct] [varchar](30) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[CustTel] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[BankCode] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYState] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PrintState] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ReqStr] [nvarchar](2000) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ResStr] [nvarchar](2000) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[MerchantId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ResCode] [varchar](6) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[CardHolderName] [nvarchar](120) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ReqType] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[WSId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[T] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[SysD] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[SysU] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ClientID] [int] NULL, </br>
+ CONSTRAINT [UQ_SCHEMA__S3PayLog_2] UNIQUE NONCLUSTERED  </br>
+&emsp;&emsp;&emsp;&emsp;( </br>
+&emsp;&emsp;&emsp;&emsp;	[POSId] ASC, </br>
+&emsp;&emsp;&emsp;&emsp;	[I] ASC </br>
+&emsp;&emsp;&emsp;&emsp;) </br>
+) </code> 		
+		<h2> ------------------------------------------------------------------------------ </h2>
+				<p>		+ Bảng S3LOG (ORACLE):	</p> 
+						<code>DROP TABLE [SCHEMA].S3PAYLOG CASCADE CONSTRAINTS; </br>
+
+CREATE TABLE [SCHEMA].S3PAYLOG </br>
+( </br>
+&emsp;&emsp;&emsp;&emsp;  I               NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  S3ID            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  POSID           NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PRODUCTID       NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PUMPID          NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  TERMINALID      NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  REQQTY          NUMBER(14,4), </br>
+&emsp;&emsp;&emsp;&emsp;  REQAMT          NUMBER(14,4), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYREFNO        VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYREQDATE      NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYRESDATE      NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYAMT          NUMBER(14,4), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYINFO         VARCHAR2(255 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYACCT         VARCHAR2(30 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  CUSTTEL         VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  BANKCODE        VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PAYSTATE        NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  PRINTSTATE      NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  REQSTR          VARCHAR2(2000 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  RESSTR          VARCHAR2(2000 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  T               NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  SYSD            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  SYSU            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  MERCHANTID      NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  RESCODE         VARCHAR2(6 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  CARDHOLDERNAME  VARCHAR2(120 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  REQTYPE         VARCHAR2(20 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  WSID            NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  CLIENTID        NUMBER(11) </br>
+) </br>
+TABLESPACE [SCHEMA]_ST </br>
+PCTUSED    0 </br>
+PCTFREE    10 </br>
+INITRANS   1 </br>
+MAXTRANS   255 </br>
+STORAGE    ( </br>
+&emsp;&emsp;&emsp;&emsp;            INITIAL          64K </br>
+&emsp;&emsp;&emsp;&emsp;            NEXT             1M </br>
+&emsp;&emsp;&emsp;&emsp;            MINEXTENTS       1 </br>
+&emsp;&emsp;&emsp;&emsp;            MAXEXTENTS       UNLIMITED </br>
+&emsp;&emsp;&emsp;&emsp;            PCTINCREASE      0 </br>
+&emsp;&emsp;&emsp;&emsp;            BUFFER_POOL      DEFAULT </br>
+&emsp;&emsp;&emsp;&emsp;           ) </br>
+LOGGING  </br>
+NOCOMPRESS  </br>
+NOCACHE </br>
+MONITORING; </br>
+ </br> 
+
+CREATE UNIQUE INDEX [SCHEMA].UQ_[SCHEMA]__S3PAYLOG_2 ON [SCHEMA].S3PAYLOG </br>
+(POSID, I) </br>
+LOGGING </br>
+TABLESPACE [SCHEMA]_ST </br>
+PCTFREE    10 </br>
+INITRANS   2 </br>
+MAXTRANS   255 </br>
+STORAGE    ( </br>
+&emsp;&emsp;&emsp;&emsp;            INITIAL          64K </br>
+&emsp;&emsp;&emsp;&emsp;            NEXT             1M </br>
+&emsp;&emsp;&emsp;&emsp;            MINEXTENTS       1 </br>
+&emsp;&emsp;&emsp;&emsp;            MAXEXTENTS       UNLIMITED </br>
+&emsp;&emsp;&emsp;&emsp;            PCTINCREASE      0 </br>
+&emsp;&emsp;&emsp;&emsp;            BUFFER_POOL      DEFAULT </br>
+&emsp;&emsp;&emsp;&emsp;           ); </br>
+
+ALTER TABLE [SCHEMA].S3PAYLOG ADD ( </br>
+&emsp;&emsp;&emsp;&emsp;  CONSTRAINT UQ_[SCHEMA]__S3PAYLOG_2 </br>
+&emsp;&emsp;&emsp;&emsp;  UNIQUE (POSID, I) </br>
+&emsp;&emsp;&emsp;&emsp;  USING INDEX [SCHEMA].UQ_[SCHEMA]__S3PAYLOG_2 </br>
+&emsp;&emsp;&emsp;&emsp;  ENABLE VALIDATE); </br>
+  </code> 
+		<p>		+ Bảng S3PAYLOG (SQL Server):	</p> 
+						<code>CREATE TABLE [SCHEMA].[S3PayLog]( </br>
+&emsp;&emsp;&emsp;&emsp;	[I] [bigint] NOT NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[S3Id] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[POSId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ProductId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PumpId] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[TerminalId] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[REQQty] [numeric](14, 4) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[REQAmt] [numeric](14, 4) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYRefNo] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYReqDate] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYResDate] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYAmt] [numeric](14, 4) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYInfo] [nvarchar](255) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYAcct] [varchar](30) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[CustTel] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[BankCode] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PAYState] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PrintState] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ReqStr] [nvarchar](2000) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ResStr] [nvarchar](2000) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[MerchantId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ResCode] [varchar](6) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[CardHolderName] [nvarchar](120) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ReqType] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[WSId] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[T] [int] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[SysD] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[SysU] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ClientID] [int] NULL, </br>
+ CONSTRAINT [UQ_SCHEMA__S3PayLog_2] UNIQUE NONCLUSTERED  </br>
+&emsp;&emsp;&emsp;&emsp;( </br>
+&emsp;&emsp;&emsp;&emsp;	[POSId] ASC, </br>
+&emsp;&emsp;&emsp;&emsp;	[I] ASC </br>
+&emsp;&emsp;&emsp;&emsp;) </br>
+) </code> 		
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>		+ Bảng S3CONFIG (ORACLE):	</p> 
+						<code>DROP TABLE [SCHEMA].S3CONFIG CASCADE CONSTRAINTS; </br>
+
+CREATE TABLE [SCHEMA].S3CONFIG </br>
+( </br>
+&emsp;&emsp;&emsp;&emsp;  I                 NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  C                 NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  FK                NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  DISPROW           NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  DISPCOL           NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  DIS               NUMBER(12,2), </br>
+&emsp;&emsp;&emsp;&emsp;  POS               NUMBER(18), </br>
+&emsp;&emsp;&emsp;&emsp;  PUMPDISPTITLE     VARCHAR2(6 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PRODUCTDISPTITLE  VARCHAR2(500 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  JOBSTODISPLAY     NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  JOBSTOWAIT        NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  DEFAULTPAID       CHAR(1 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  RENDERNUMBER      NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  DISPKIND          NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  DISPWIDTH         NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  DISPHEIGHT        NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  RENDERKIND        NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  KINDCOLSPAN       NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  FONTSIZE          NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  KINDROWSPAN       NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  DISPCOLOR         VARCHAR2(16 BYTE), </br>
+&emsp;&emsp;&emsp;&emsp;  PLAYSTATUS        NUMBER(8), </br>
+&emsp;&emsp;&emsp;&emsp;  ENABLESTATUS      NUMBER(8) </br>
+) </br>
+TABLESPACE [SCHEMA]_ST </br>
+PCTUSED    0 </br>
+PCTFREE    10 </br>
+INITRANS   1 </br>
+MAXTRANS   255 </br>
+STORAGE    ( </br>
+&emsp;&emsp;&emsp;&emsp;            INITIAL          64K </br>
+&emsp;&emsp;&emsp;&emsp;            NEXT             1M </br>
+&emsp;&emsp;&emsp;&emsp;            MINEXTENTS       1 </br>
+&emsp;&emsp;&emsp;&emsp;            MAXEXTENTS       UNLIMITED </br>
+&emsp;&emsp;&emsp;&emsp;            PCTINCREASE      0 </br>
+&emsp;&emsp;&emsp;&emsp;            BUFFER_POOL      DEFAULT </br>
+&emsp;&emsp;&emsp;&emsp;           ) </br>
+LOGGING  </br>
+NOCOMPRESS  </br>
+NOCACHE </br>
+MONITORING; </br>
+
+CREATE UNIQUE INDEX [SCHEMA].UQ__S3CONFIG_1 ON [SCHEMA].S3CONFIG </br>
+(POS, DISPROW, DISPCOL, RENDERKIND) </br>
+NOLOGGING </br>
+TABLESPACE INDEX_TBS </br>
+PCTFREE    10 </br>
+INITRANS   2 </br>
+MAXTRANS   255 </br>
+STORAGE    ( </br>
+&emsp;&emsp;&emsp;&emsp;            INITIAL          64K </br>
+&emsp;&emsp;&emsp;&emsp;            NEXT             1M </br>
+&emsp;&emsp;&emsp;&emsp;            MINEXTENTS       1 </br>
+&emsp;&emsp;&emsp;&emsp;            MAXEXTENTS       UNLIMITED </br>
+&emsp;&emsp;&emsp;&emsp;            PCTINCREASE      0 </br>
+&emsp;&emsp;&emsp;&emsp;            BUFFER_POOL      DEFAULT </br>
+&emsp;&emsp;&emsp;&emsp;           );</br>
+
+ALTER TABLE [SCHEMA].S3CONFIG ADD ( </br>
+&emsp;&emsp;  PRIMARY KEY </br>
+&emsp;&emsp;  (I) </br>
+&emsp;&emsp;  USING INDEX </br>
+&emsp;&emsp;&emsp;&emsp;    TABLESPACE INDEX_TBS </br>
+&emsp;&emsp;&emsp;&emsp;    PCTFREE    10 </br>
+&emsp;&emsp;&emsp;&emsp;    INITRANS   2 </br>
+&emsp;&emsp;&emsp;&emsp;    MAXTRANS   255 </br>
+&emsp;&emsp;&emsp;&emsp;    STORAGE    ( </br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                INITIAL          64K </br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                NEXT             1M </br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                MINEXTENTS       1 </br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                MAXEXTENTS       UNLIMITED </br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                PCTINCREASE      0 </br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                BUFFER_POOL      DEFAULT </br>
+&emsp;&emsp;&emsp;&emsp;               ) </br>
+&emsp;&emsp;&emsp;&emsp;  ENABLE VALIDATE </br>
+,  CONSTRAINT UQ__S3CONFIG_1 </br>
+&emsp;&emsp;&emsp;&emsp;  UNIQUE (POS, DISPROW, DISPCOL, RENDERKIND) </br>
+&emsp;&emsp;&emsp;&emsp;  USING INDEX [SCHEMA].UQ__S3CONFIG_1 </br>
+&emsp;&emsp;&emsp;&emsp;  ENABLE VALIDATE); </code>
+		<p>		+ Bảng S3CONFIG (SQL Server):	</p> 
+						<code>CREATE TABLE [SCHEMA].[S3CONFIG]( </br>
+&emsp;&emsp;&emsp;&emsp;	[I] [bigint] PRIMARY KEY NOT NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[C] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[FK] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPROW] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPCOL] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DIS] [numeric](12, 2) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PUMPDISPTITLE] [nvarchar](6) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PRODUCTDISPTITLE] [nvarchar](500) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[JOBSTODISPLAY] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[JOBSTOWAIT] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DEFAULTPAID] [char](1) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[RENDERNUMBER] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPKIND] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPWIDTH] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPHEIGHT] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[RENDERKIND] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[KINDCOLSPAN] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[FONTSIZE] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[KINDROWSPAN] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPCOLOR] [varchar](16) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PLAYSTATUS] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[ENABLESTATUS] [numeric](8, 0) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[MerchantID] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[TerminalID] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[POSIP] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[PRINTIP] [varchar](20) NULL, </br>
+&emsp;&emsp;&emsp;&emsp;	[BANKSVR] [varchar](8) NULL, </br>
+&emsp;&emsp; CONSTRAINT [UQ__S3CONFIG_1] UNIQUE NONCLUSTERED  </br>
+&emsp;&emsp;( </br>
+&emsp;&emsp;&emsp;&emsp;	[POS] ASC, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPROW] ASC, </br>
+&emsp;&emsp;&emsp;&emsp;	[DISPCOL] ASC, </br>
+&emsp;&emsp;&emsp;&emsp;	[RENDERKIND] ASC </br>
+&emsp;&emsp;) </br>
+) </code>
+		<p> 	+ Tạo menu: Cấu hình vị trí vòi bơm </p>
+		<p> 		&emsp;&emsp;	MenuText: Cấu hình vị trí vòi bơm </p>
+		<p>			&emsp;&emsp;	Href: ../Basetabs/dbtab.aspx?tabindex=s3config </p>
+		<p>			&emsp;&emsp;	MenuOrder: 61 </p>
+		<p>			&emsp;&emsp;	MenuModule: TDH - Cấu hình CHXD </p>
+		<p>			&emsp;&emsp;	Gán quyền: S3C[COMPANYCODE] </p>
+		<p> 	+ Tạo BaseTab: Cấu hình vị trí vòi bơm bán tự phục vụ (S3) </p>
+		<p> 		&emsp;&emsp;	C: s3config </p>
+		<p>			&emsp;&emsp;	N: Cấu hình vị trí vòi bơm bán tự phục vụ (S3) </p>
+		<p>			&emsp;&emsp;	Schema: </p>
+		<p>			&emsp;&emsp;	Dbtab: S3Config </p
+		<p>			&emsp;&emsp;	ListQry: Select I,C,FK,DispRow,DispCol,POS,PUMPDISPTITLE,PRODUCTDISPTITLE,JOBSTODISPLAY,JOBSTOWAIT,DEFAULTPAID,DISPKIND,DISPWIDTH,DISPHEIGHT,RENDERKIND,KINDCOLSPAN From S3Config</p>	
+		<p>			&emsp;&emsp;	Input groups: </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	DB columns Col: C^FK^DISPROW^DISPCOL^POS^PUMPDISPTITLE^DISPKIND^RENDERKIND </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	ColName: [Sys]^Vòi bơm^Hiển thị tại dòng^Hiển thị tại cột^Cửa hàng^Tên vòi bơm^Render As^Pump Group </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	InputDef: ID,>0,>,>,>,>,>,>,>,>,>^&,>0,>Select I, C + ' - ' + N From Pump Where POS=@S(U_POS) Order By c,>,>,>,>,>,>^I,>1,>1,>8,>^I,>1,>1,>16,>^&,>1,>Select I,C + ' - ' + N From POS Where I=@S(U_POS),>,>,>,>,>,>^.,>0,>4,>,>4,>^~,>1,>1||2||3||-1,>Pump||Column separator||Row separator||No-cell,>1,>,>^~,>1,>1||2||3||4||5||6||7||8||0,>Group 1||Group 2||Group 3||Group 4||Group 5||Group 6||Group 7||Group 8||Display only,>1,>,> </p>	
+		<p>			&emsp;&emsp;	Gán quyền: S3C[COMPANYCODE] </p>
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>		+ Bảng S3MCfg (ORACLE):	</p> 
+						<code>Create Table S3MCfg( </br>
+						&emsp;&emsp;&emsp;&emsp;	I numeric(18) primary key not null, </br>
+						&emsp;&emsp;&emsp;&emsp;	C int not null, </br>
+						&emsp;&emsp;&emsp;&emsp;	N varchar2(255) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	MerchantID varchar(60) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	TerminalID varchar(60) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	POSIP varchar(60) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	PRINTIP varchar(60) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	BANKSRV varchar(20) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	POS numeric(18) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	VAR1 varchar(255) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	VAR2 varchar(255) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	VAR3 varchar(255) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	SysD numeric(18) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	SysU numeric(18) null, </br>
+						&emsp;&emsp;&emsp;&emsp;	SysV int null, </br>
+						&emsp;&emsp;&emsp;&emsp;	SysS int null, </br>
+						&emsp;&emsp;&emsp;&emsp;	Constraint UQ__S3MCfg_2 Unique(POS, C) </br>
+						); </code> 
+		<p>		+ Bảng S3MCfg (SQL Server):	</p> 
+						<code>Create Table [SCHEMA].S3MCfg( </br>
+						&emsp;&emsp;&emsp;&emsp;	[I] [bigint] primary key NOT NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[C] [int] NOT NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[N] [nvarchar](255) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[MerchantID] [varchar](60) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[TerminalID] [varchar](60) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[POSIP] [varchar](60) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[PRINTIP] [varchar](60) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[BANKSVR] [varchar](20) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[VAR1] [varchar](255) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[VAR2] [varchar](255) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[VAR3] [varchar](255) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[SysD] [bigint] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[SysU] [bigint] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[SysV] [int] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[SysS] [int] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	Constraint UQ__S3MCfg_2 Unique(POS, C) </br>
+						); </code> 
+		<p> 	+ Tạo menu: CẤU HÌNH THÔNG TIN OPT </p>
+		<p> 		&emsp;&emsp;	MenuText: Cấu hình thông tin OPT </p>
+		<p>			&emsp;&emsp;	Href: ../Basetabs/dbtab.aspx?tabindex=OPTCfg </p>
+		<p>			&emsp;&emsp;	MenuOrder: 69 </p>
+		<p>			&emsp;&emsp;	MenuModule: TDH - Cấu hình CHXD </p>
+		<p>			&emsp;&emsp;	Gán quyền: S3C[COMPANYCODE] </p>	
+		<p> 	+ Tạo BaseTab: CẤU HÌNH THÔNG TIN OPT </p>
+		<p> 		&emsp;&emsp;	C: OPTCfg </p>
+		<p>			&emsp;&emsp;	N: Cấu hình thông tin OPT </p>
+		<p>			&emsp;&emsp;	Schema: </p>
+		<p>			&emsp;&emsp;	Dbtab: S3MCfg </p>
+		<p>			&emsp;&emsp;	Input groups: </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	DB columns Col: C^N^MerchantID^TerminalID^POSIP^PRINTERIP^BANKSRV^POS </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	ColName: Nhóm^Tên nhóm^MerchantID^TerminalID^POSIP^PRINTERIP^BANKSRV^CHXD </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	InputDef: I,>1,>,>,>^^^^^^^&,>1,>Select I,N From POS Where I=@S(U_POS),>,>,>,>,>,> </p>	
+		<p>			&emsp;&emsp;	Gán quyền: S3C[COMPANYCODE] </p>	
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>		+ Bảng WalletConfig (ORACLE):	</p> 
+						<code>Create Table WalletConfig ( </br>
+						&emsp;&emsp;&emsp;&emsp;	I numeric(18) primary key not null, </br>
+						&emsp;&emsp;&emsp;&emsp;	C int not NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	N varchar2(100)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	POS numeric(18) not null, </br>
+						&emsp;&emsp;&emsp;&emsp;	PartnerCode varchar(50)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	PublicKey varchar(1000)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	SecretKey varchar(50)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	BaseMomoUrl varchar(255)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	Type varchar(100) NOT NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	Var1 varchar(100) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	Var2 varchar(100) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	Var3 varchar(100) NULL </br>
+						); </code>
+		<p>		+ Bảng WalletConfig (SQL Server):	</p> 
+						<code>Create Table [SCHEMA].WalletConfig ( </br>
+						&emsp;&emsp;&emsp;&emsp;	[I] [bigint] primary key NOT NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[C] [varchar](20) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[N] [nvarchar](100) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NOT NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[PartnerCode] [nvarchar](50) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[PublicKey] [nvarchar](1000) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[SecretKey] [nvarchar](50) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[BaseMomoUrl] [nvarchar](255) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[Type] [nvarchar](100) NOT NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[Var1] [nvarchar](100) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[Var2] [nvarchar](100) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[Var3] [nvarchar](100) NULL, </br>
+						); </code>
+		<p> 	+ Tạo menu: CẤU HÌNH THÔNG TIN VÍ ĐIỆN TỬ </p>
+		<p> 		&emsp;&emsp;	MenuText: Cấu hình thông tin Ví điện tử </p>
+		<p>			&emsp;&emsp;	Href: ../Basetabs/dbtab.aspx?tabindex=WalletCfg </p>
+		<p>			&emsp;&emsp;	MenuOrder: 70 </p>
+		<p>			&emsp;&emsp;	MenuModule: TDH - Cấu hình CHXD </p>
+		<p>			&emsp;&emsp;	Gán quyền: S3C[COMPANYCODE] </p>
+		<p> 	+ Tạo BaseTab: CẤU HÌNH THÔNG TIN VÍ ĐIỆN TỬ </p>
+		<p> 		&emsp;&emsp;	C: WalletCfg </p>
+		<p>			&emsp;&emsp;	N: Cấu hình thông tin Ví điện tử </p>
+		<p>			&emsp;&emsp;	Schema: </p>
+		<p>			&emsp;&emsp;	Dbtab: WalletConfig </p>
+		<p>			&emsp;&emsp;	Input groups: </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	DB columns Col: C^POS^PartnerCode^PublicKey^SecretKey^BaseMomoUrl^Type </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	ColName: C^POS^PartnerCode^PublicKey^SecretKey^BaseMomoUrl^Type </p>	
+		<p>			&emsp;&emsp;&emsp;&emsp;	-	InputDef: ID,>0,>,>,>,>,>,>,>,>,>^J,>0,>select C,N From POS,>,>POS,>25,>,>^.,>0,>,>,>,>^.,>0,>,>,>,>^.,>0,>,>,>,>^.,>0,>,>,>,>^.,>0,>,>,>,> </p>	
+		<p>			&emsp;&emsp;	Gán quyền: S3C[COMPANYCODE] </p>	
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>		+ Bảng S3EvtLog (ORACLE):	</p> 
+						<code>Create Table S3EvtLog ( </br>
+						&emsp;&emsp;&emsp;&emsp;	D NUMBER(18) primary key not null, </br>
+						&emsp;&emsp;&emsp;&emsp;	SQLD VARCHAR2(25), </br>
+						&emsp;&emsp;&emsp;&emsp;	ECode VARCHAR2(20)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	EName VARCHAR2(255) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	EDesc VARCHAR2(1500)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	EGCode VARCHAR2(20)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	RefID NUMBER(18)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	RefNo VARCHAR2(20)  NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	EvtState NUMBER(8) NOT NULL </br>
+						); </code>
+		<p>		+ Bảng S3EvtLog (SQL Server):	</p> 
+						<code>Create Table [SCHEMA].S3EvtLog ( </br>
+						&emsp;&emsp;&emsp;&emsp;	[D] [bigint] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[SQLD] [datetime] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[ECode] [varchar](20) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[EName] [nvarchar](255) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[EDesc] [nvarchar](1500) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[EGCode] [varchar](20) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[RefID] [bigint] NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[RefNo] [varchar](20) NULL, </br>
+						&emsp;&emsp;&emsp;&emsp;	[EvtState] [int] NULL </br>
+						); </code>
+		<h2> ------------------------------------------------------------------------------ </h2>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
