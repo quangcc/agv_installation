@@ -224,42 +224,42 @@ ALTER TABLE [SCHEMA].S3PAYLOG ADD ( </br>
 &emsp;&emsp;&emsp;&emsp;  ENABLE VALIDATE); </br>
   </code> 
 		<p>		+ Bảng S3PAYLOG (SQL Server):	</p> 
-						<code>CREATE TABLE [SCHEMA].[S3PayLog]( </br>
-&emsp;&emsp;&emsp;&emsp;	[I] [bigint] NOT NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[S3Id] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[POSId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ProductId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PumpId] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[TerminalId] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[REQQty] [numeric](14, 4) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[REQAmt] [numeric](14, 4) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYRefNo] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYReqDate] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYResDate] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYAmt] [numeric](14, 4) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYInfo] [nvarchar](255) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYAcct] [varchar](30) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[CustTel] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[BankCode] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYState] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PrintState] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ReqStr] [nvarchar](2000) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ResStr] [nvarchar](2000) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[MerchantId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ResCode] [varchar](6) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[CardHolderName] [nvarchar](120) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ReqType] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[WSId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[T] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[SysD] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[SysU] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ClientID] [int] NULL, </br>
- CONSTRAINT [UQ_SCHEMA__S3PayLog_2] UNIQUE NONCLUSTERED  </br>
-&emsp;&emsp;&emsp;&emsp;( </br>
-&emsp;&emsp;&emsp;&emsp;	[POSId] ASC, </br>
-&emsp;&emsp;&emsp;&emsp;	[I] ASC </br>
-&emsp;&emsp;&emsp;&emsp;) </br>
-) </code> 		
+						<code>CREATE TABLE [SCHEMA].[S3PayLog](</br>
+								[I] [bigint] NOT NULL,</br>
+								[S3Id] [bigint] NULL,</br>
+								[POSId] [bigint] NULL,</br>
+								[ProductId] [bigint] NULL,</br>
+								[PumpId] [int] NULL,</br>
+								[TerminalId] [int] NULL,</br>
+								[REQQty] [numeric](14, 4) NULL,</br>
+								[REQAmt] [numeric](14, 4) NULL,</br>
+								[PAYRefNo] [varchar](20) NULL,</br>
+								[PAYReqDate] [bigint] NULL,</br>
+								[PAYResDate] [bigint] NULL,</br>
+								[PAYAmt] [numeric](14, 4) NULL,</br>
+								[PAYInfo] [nvarchar](255) NULL,</br>
+								[PAYAcct] [varchar](30) NULL,</br>
+								[CustTel] [varchar](20) NULL,</br>
+								[BankCode] [varchar](20) NULL,</br>
+								[PAYState] [int] NULL,</br>
+								[PrintState] [int] NULL,</br>
+								[ReqStr] [nvarchar](2000) NULL,</br>
+								[ResStr] [nvarchar](2000) NULL,</br>
+								[MerchantId] [bigint] NULL,</br>
+								[ResCode] [varchar](6) NULL,</br>
+								[CardHolderName] [nvarchar](120) NULL,</br>
+								[ReqType] [varchar](20) NULL,</br>
+								[WSId] [bigint] NULL,</br>
+								[T] [int] NULL,</br>
+								[SysD] [bigint] NULL,</br>
+								[SysU] [bigint] NULL,</br>
+								[ClientID] [int] NULL,</br>
+								CONSTRAINT [UQ_SCHEMA__S3PayLog_2] UNIQUE NONCLUSTERED</br>
+								(</br>
+								[POSId] ASC,</br>
+								[I] ASC</br>
+								)</br>
+						)</code> 		
 		<h2> ------------------------------------------------------------------------------ </h2>
 				<p>		+ Bảng S3LOG (ORACLE):	</p> 
 						<code>DROP TABLE [SCHEMA].S3LOG CASCADE CONSTRAINTS; </br>
@@ -304,27 +304,27 @@ NOCACHE </br>
 MONITORING; </br>
   </code> 
 		<p>		+ Bảng S3PAYLOG (SQL Server):	</p> 
-						<code>CREATE TABLE [SCHEMA].[S3Log]( </br>
-&emsp;&emsp;&emsp;&emsp;	[I] [bigint] PRIMARY KEY NOT NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[WShift] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PumpTDHID] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ProductI] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[SalePrice] [numeric](8, 2) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[cmdAmt] [numeric](12, 2) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[retAmt] [numeric](12, 2) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[retQty] [numeric](12, 4) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[cmdTime] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[retTime] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[jobStatus] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[sysU] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[prevStatus] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[paidStatus] [int] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[CardNumber] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[discount] [numeric](10, 2) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PAYId] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PrintState] [int] NULL </br>
-&emsp;&emsp;&emsp;&emsp;) </code> 		
+						<code>CREATE TABLE [SCHEMA].[S3Log] (</br>
+								[I] [bigint] PRIMARY KEY NOT NULL,</br>
+								[POS] [bigint] NULL,</br>
+								[WShift] [bigint] NULL,</br>
+								[PumpTDHID] [int] NULL,</br>
+								[ProductI] [bigint] NULL,</br>
+								[SalePrice] [numeric](8, 2) NULL,</br>
+								[cmdAmt] [numeric](12, 2) NULL,</br>
+								[retAmt] [numeric](12, 2) NULL,</br>
+								[retQty] [numeric](12, 4) NULL,</br>
+								[cmdTime] [bigint] NULL,</br>
+								[retTime] [bigint] NULL,</br>
+								[jobStatus] [int] NULL,</br>
+								[sysU] [bigint] NULL,</br>
+								[prevStatus] [int] NULL,</br>
+								[paidStatus] [int] NULL,</br>
+								[CardNumber] [bigint] NULL,</br>
+								[discount] [numeric](10, 2) NULL,</br>
+								[PAYId] [bigint] NULL,</br>
+								[PrintState] [int] NULL</br>
+						)</code> 		
 		<h2> ------------------------------------------------------------------------------ </h2>
 		<p>		+ Bảng S3CONFIG (ORACLE):	</p> 
 						<code>DROP TABLE [SCHEMA].S3CONFIG CASCADE CONSTRAINTS; </br>
@@ -411,43 +411,43 @@ ALTER TABLE [SCHEMA].S3CONFIG ADD ( </br>
 &emsp;&emsp;&emsp;&emsp;  USING INDEX [SCHEMA].UQ__S3CONFIG_1 </br>
 &emsp;&emsp;&emsp;&emsp;  ENABLE VALIDATE); </code>
 		<p>		+ Bảng S3CONFIG (SQL Server):	</p> 
-						<code>CREATE TABLE [SCHEMA].[S3CONFIG]( </br>
-&emsp;&emsp;&emsp;&emsp;	[I] [bigint] PRIMARY KEY NOT NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[C] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[FK] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPROW] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPCOL] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DIS] [numeric](12, 2) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PUMPDISPTITLE] [nvarchar](6) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PRODUCTDISPTITLE] [nvarchar](500) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[JOBSTODISPLAY] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[JOBSTOWAIT] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DEFAULTPAID] [char](1) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[RENDERNUMBER] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPKIND] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPWIDTH] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPHEIGHT] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[RENDERKIND] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[KINDCOLSPAN] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[FONTSIZE] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[KINDROWSPAN] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPCOLOR] [varchar](16) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PLAYSTATUS] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[ENABLESTATUS] [numeric](8, 0) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[MerchantID] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[TerminalID] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[POSIP] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[PRINTIP] [varchar](20) NULL, </br>
-&emsp;&emsp;&emsp;&emsp;	[BANKSVR] [varchar](8) NULL, </br>
-&emsp;&emsp; CONSTRAINT [UQ__S3CONFIG_1] UNIQUE NONCLUSTERED  </br>
-&emsp;&emsp;( </br>
-&emsp;&emsp;&emsp;&emsp;	[POS] ASC, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPROW] ASC, </br>
-&emsp;&emsp;&emsp;&emsp;	[DISPCOL] ASC, </br>
-&emsp;&emsp;&emsp;&emsp;	[RENDERKIND] ASC </br>
-&emsp;&emsp;) </br>
-) </code>
+						<code>CREATE TABLE [SCHEMA].[S3CONFIG](</br>
+						[I] [bigint] PRIMARY KEY NOT NULL,</br>
+						[C] [bigint] NULL,</br>
+						[FK] [bigint] NULL,</br>
+						[DISPROW] [numeric](8, 0) NULL,</br>
+						[DISPCOL] [numeric](8, 0) NULL,</br>
+						[DIS] [numeric](12, 2) NULL,</br>
+						[POS] [bigint] NULL,</br>
+						[PUMPDISPTITLE] [nvarchar](6) NULL,</br>
+						[PRODUCTDISPTITLE] [nvarchar](500) NULL,</br>
+						[JOBSTODISPLAY] [numeric](8, 0) NULL,</br>
+						[JOBSTOWAIT] [numeric](8, 0) NULL,</br>
+						[DEFAULTPAID] [char](1) NULL,</br>
+						[RENDERNUMBER] [numeric](8, 0) NULL,</br>
+						[DISPKIND] [numeric](8, 0) NULL,</br>
+						[DISPWIDTH] [numeric](8, 0) NULL,</br>
+						[DISPHEIGHT] [numeric](8, 0) NULL,</br>
+						[RENDERKIND] [numeric](8, 0) NULL,</br>
+						[KINDCOLSPAN] [numeric](8, 0) NULL,</br>
+						[FONTSIZE] [numeric](8, 0) NULL,</br>
+						[KINDROWSPAN] [numeric](8, 0) NULL,</br>
+						[DISPCOLOR] [varchar](16) NULL,</br>
+						[PLAYSTATUS] [numeric](8, 0) NULL,</br>
+						[ENABLESTATUS] [numeric](8, 0) NULL,</br>
+						[MerchantID] [varchar](20) NULL,</br>
+						[TerminalID] [varchar](20) NULL,</br>
+						[POSIP] [varchar](20) NULL,</br>
+						[PRINTIP] [varchar](20) NULL,</br>
+						[BANKSVR] [varchar](8) NULL,</br>
+						CONSTRAINT [UQ__S3CONFIG_1] UNIQUE NONCLUSTERED</br>
+						(</br>
+						[POS] ASC,</br>
+						[DISPROW] ASC,</br>
+						[DISPCOL] ASC,</br>
+						[RENDERKIND] ASC</br>
+						)</br>
+					)</code>
 		<p> 	+ Tạo menu: Cấu hình vị trí vòi bơm </p>
 		<p> 		&emsp;&emsp;	MenuText: Cấu hình vị trí vòi bơm </p>
 		<p>			&emsp;&emsp;	Href: ../Basetabs/dbtab.aspx?tabindex=s3config </p>
@@ -487,25 +487,25 @@ ALTER TABLE [SCHEMA].S3CONFIG ADD ( </br>
 						&emsp;&emsp;&emsp;&emsp;	Constraint UQ__S3MCfg_2 Unique(POS, C) </br>
 						); </code> 
 		<p>		+ Bảng S3MCfg (SQL Server):	</p> 
-						<code>Create Table [SCHEMA].S3MCfg( </br>
-						&emsp;&emsp;&emsp;&emsp;	[I] [bigint] primary key NOT NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[C] [int] NOT NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[N] [nvarchar](255) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[MerchantID] [varchar](60) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[TerminalID] [varchar](60) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[POSIP] [varchar](60) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[PRINTIP] [varchar](60) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[BANKSVR] [varchar](20) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[VAR1] [varchar](255) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[VAR2] [varchar](255) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[VAR3] [varchar](255) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[SysD] [bigint] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[SysU] [bigint] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[SysV] [int] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[SysS] [int] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	Constraint UQ__S3MCfg_2 Unique(POS, C) </br>
-						); </code> 
+						<code>CREATE TABLE [SCHEMA].S3MCfg(</br>
+								[I] [bigint] primary key NOT NULL,</br>
+								[C] [int] NOT NULL,</br>
+								[N] [nvarchar](255) NULL,</br>
+								[MerchantID] [varchar](60) NULL,</br>
+								[TerminalID] [varchar](60) NULL,</br>
+								[POSIP] [varchar](60) NULL,</br>
+								[PRINTIP] [varchar](60) NULL,</br>
+								[BANKSVR] [varchar](20) NULL,</br>
+								[POS] [bigint] NULL,</br>
+								[VAR1] [varchar](255) NULL,</br>
+								[VAR2] [varchar](255) NULL,</br>
+								[VAR3] [varchar](255) NULL,</br>
+								[SysD] [bigint] NULL,</br>
+								[SysU] [bigint] NULL,</br>
+								[SysV] [int] NULL,</br>
+								[SysS] [int] NULL,</br>
+								Constraint UQ__S3MCfg_2 Unique(POS, C)</br>
+						);</code> 
 		<p> 	+ Tạo menu: CẤU HÌNH THÔNG TIN OPT </p>
 		<p> 		&emsp;&emsp;	MenuText: Cấu hình thông tin OPT </p>
 		<p>			&emsp;&emsp;	Href: ../Basetabs/dbtab.aspx?tabindex=OPTCfg </p>
@@ -539,20 +539,20 @@ ALTER TABLE [SCHEMA].S3CONFIG ADD ( </br>
 						&emsp;&emsp;&emsp;&emsp;	Var3 varchar(100) NULL </br>
 						); </code>
 		<p>		+ Bảng WalletConfig (SQL Server):	</p> 
-						<code>Create Table [SCHEMA].WalletConfig ( </br>
-						&emsp;&emsp;&emsp;&emsp;	[I] [bigint] primary key NOT NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[C] [varchar](20) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[N] [nvarchar](100) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[POS] [bigint] NOT NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[PartnerCode] [nvarchar](50) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[PublicKey] [nvarchar](1000) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[SecretKey] [nvarchar](50) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[BaseMomoUrl] [nvarchar](255) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[Type] [nvarchar](100) NOT NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[Var1] [nvarchar](100) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[Var2] [nvarchar](100) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[Var3] [nvarchar](100) NULL, </br>
-						); </code>
+						<code>CREATE TABLE [SCHEMA].WalletConfig (</br>
+								[I] [bigint] primary key NOT NULL,</br>
+								[C] [varchar](20) NULL,</br>
+								[N] [nvarchar](100) NULL,</br>
+								[POS] [bigint] NOT NULL,</br>
+								[PartnerCode] [nvarchar](50) NULL,</br>
+								[PublicKey] [nvarchar](1000) NULL,</br>
+								[SecretKey] [nvarchar](50) NULL,</br>
+								[BaseMomoUrl] [nvarchar](255) NULL,</br>
+								[Type] [nvarchar](100) NOT NULL,</br>
+								[Var1] [nvarchar](100) NULL,</br>
+								[Var2] [nvarchar](100) NULL,</br>
+								[Var3] [nvarchar](100) NULL</br>
+						);</code>
 		<p> 	+ Tạo menu: CẤU HÌNH THÔNG TIN VÍ ĐIỆN TỬ </p>
 		<p> 		&emsp;&emsp;	MenuText: Cấu hình thông tin Ví điện tử </p>
 		<p>			&emsp;&emsp;	Href: ../Basetabs/dbtab.aspx?tabindex=WalletCfg </p>
@@ -583,18 +583,100 @@ ALTER TABLE [SCHEMA].S3CONFIG ADD ( </br>
 						&emsp;&emsp;&emsp;&emsp;	EvtState NUMBER(8) NOT NULL </br>
 						); </code>
 		<p>		+ Bảng S3EvtLog (SQL Server):	</p> 
-						<code>Create Table [SCHEMA].S3EvtLog ( </br>
-						&emsp;&emsp;&emsp;&emsp;	[D] [bigint] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[SQLD] [datetime] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[ECode] [varchar](20) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[EName] [nvarchar](255) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[EDesc] [nvarchar](1500) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[EGCode] [varchar](20) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[RefID] [bigint] NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[RefNo] [varchar](20) NULL, </br>
-						&emsp;&emsp;&emsp;&emsp;	[EvtState] [int] NULL </br>
-						); </code>
+						<code>CREATE TABLE [SCHEMA].S3EvtLog (</br>
+								[D] [bigint] NULL,</br>
+								[SQLD] [datetime] NULL,</br>
+								[ECode] [varchar](20) NULL,</br>
+								[EName] [nvarchar](255) NULL,</br>
+								[EDesc] [nvarchar](1500) NULL,</br>
+								[EGCode] [varchar](20) NULL,</br>
+								[RefID] [bigint] NULL,</br>
+								[RefNo] [varchar](20) NULL,</br>
+								[EvtState] [int] NULL</br>
+						);</code>
 		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>		+ Bảng S3CUSTOMER (ORACLE):	</p> 
+						<code>Undone!!!</code>
+		<p>		+ Bảng S3CUSTOMER (SQL Server):	</p> 
+						<code>CREATE TABLE [SCHEMA].[S3CUSTOMER](</br>
+								[I] [bigint] PRIMARY KEY NOT NULL,</br>
+								[C] [varchar](40) NULL,</br>
+								[N] [nvarchar](100) NULL,</br>
+								[IDNUMBER] [varchar](40) NULL,</br>
+								[BIRTHDATE] [bigint] NULL,</br>
+								[TEL] [varchar](40) NULL,</br>
+								[ADDRESS] [nvarchar](200) NULL,</br>
+								[POSCODE] [varchar](20) NULL,</br>
+								[PROVINCE] [bigint] NULL,</br>
+								[COUNTRY] [bigint] NULL,</br>
+								[COMPANY] [nvarchar](100) NULL,</br>
+								[CUSTOMERTYPE] [bigint] NULL,</br>
+								[CUSTOMERGROUP] [bigint] NULL,</br>
+								[EMAIL] [varchar](80) NULL,</br>
+								[CHATACCOUNT] [varchar](40) NULL,</br>
+								[GENDER] [char](1) NULL,</br>
+								[DATEREG] [bigint] NULL,</br>
+								[SYSU] [bigint] NULL,</br>
+								[SYSD] [bigint] NULL,</br>
+								[SYSV] [numeric](8, 0) NULL,</br>
+								[SYSS] [numeric](8, 0) NULL,</br>
+								[REGPOS] [bigint] NULL,</br>
+								 CONSTRAINT [UQ__S3CUSTOMER_C] UNIQUE NONCLUSTERED </br>
+								(</br>
+									[C] ASC</br>
+								)</br>
+						)</code>
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>		+ Bảng S3CARD (ORACLE):	</p> 
+						<code>Undone!!!</code>
+		<p>		+ Bảng S3CARD (SQL Server):	</p> 
+						<code>CREATE TABLE [SCHEMA].[S3CARD](</br>
+								[I] [bigint] PRIMARY KEY NOT NULL,</br>
+								[C] [bigint] NULL,</br>
+								[N] [varchar](40) NULL,</br>
+								[FK] [bigint] NULL,</br>
+								[CARDTYPE] [char](1) NULL,</br>
+								[SERVICECODE] [char](1) NULL,</br>
+								[ISSUEDDATE] [bigint] NULL,</br>
+								[EXPIRES] [bigint] NULL,</br>
+								[DD] [varchar](10) NULL,</br>
+								[CARDSTATUS] [numeric](8, 0) NULL,</br>
+								[WSHIFT] [bigint] NULL,</br>
+								[PRICE] [numeric](8, 0) NULL,</br>
+								[REGPOS] [bigint] NULL,</br>
+								 CONSTRAINT [UQ__S3CARD_C] UNIQUE NONCLUSTERED </br>
+								(</br>
+									[C] ASC</br>
+								),</br>
+								 CONSTRAINT [UQ__S3CARD_FK_STATUS] UNIQUE NONCLUSTERED </br>
+								(</br>
+									[FK] ASC,</br>
+									[CARDSTATUS] ASC</br>
+								)</br>
+						) </code>
+		<h2> ------------------------------------------------------------------------------ </h2>
+		<p>		+ Bảng S3PAYMENT (ORACLE):	</p> 
+						<code>Undone!!!</code>
+		<p>		+ Bảng S3PAYMENT (SQL Server):	</p> 
+						<code>CREATE TABLE [S839].[S3PAYMENT](</br>
+								[I] [bigint] PRIMARY KEY NOT NULL,</br>
+								[C] [varchar](20) NULL,</br>
+								[R] [numeric](8, 0) NULL,</br>
+								[D] [bigint] NULL,</br>
+								[CUST] [bigint] NULL,</br>
+								[POS] [bigint] NULL,</br>
+								[AMT] [numeric](12, 2) NULL,</br>
+								[REMARKS] [nvarchar](500) NULL,</br>
+								[SYSU] [bigint] NULL,</br>
+								[SYSD] [bigint] NULL,</br>
+								[SYSV] [numeric](8, 0) NULL,</br>
+								[SYSS] [numeric](8, 0) NULL,</br>
+								[PRODUCTI] [bigint] NULL,</br>
+								[PRICE] [numeric](12, 2) NULL,</br>
+								[WSHIFT] [bigint] NULL,</br>
+						)  </code>
+		<h2> ------------------------------------------------------------------------------ </h2>
+		
       </div>
     </div>
     <!-- /#page-content-wrapper -->
